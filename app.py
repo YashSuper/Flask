@@ -20,8 +20,10 @@ def y():
 @app.route("/sent",methods=["GET","POST"])
 def index1() :
     if (request.method=="POST"):
-        note=request.form.get("note")
-        for u in user :
+        name=request.form.get("name")
+        email=request.form.get("email")
+        
+
             msg = Message('Hello', sender = 'yourId@gmail.com', recipients = [u])
             msg.body = note
             mail.send(msg)
